@@ -1,0 +1,10 @@
+.transaction-row {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.3s, transform 0.3s;
+
+  &.show-row {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

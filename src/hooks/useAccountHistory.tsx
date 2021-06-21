@@ -6,7 +6,7 @@ import {
 import { BigNumber } from "bignumber.js";
 import { useEffect } from 'react';
 
-interface TransactionInfo {
+export interface TransactionInfo {
   signature: string;
   blockTime: number | null | undefined;
   postBalance: number;

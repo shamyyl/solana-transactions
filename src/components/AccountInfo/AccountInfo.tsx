@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
+import { TransactionTableRow } from '../TransactionTableRow/TransactionTableRow';
 import { useAccountTransactions } from '../../hooks/useAccountHistory';
-import { lamportsToSol } from '../../utils/lamportsToSol';
-import { formatSolOutput } from '../../utils/formatSolOutput';
 
 import './AccountInfo.scss';
 
@@ -32,21 +31,9 @@ export const AccountInfo = () => {
                   </tr>
                 </thead>
                 <tbody>
-                {accountTransactions.map(({signature, blockTime, postBalance, delta, success}) => {
-                  const deltaSol = lamportsToSol(delta.toNumber());
-                  const deltaSign = delta.gt(0) ? '+' : '-';
-
-                  const postBalanceSol = lamportsToSol(postBalance);
-                  return (
-                    <tr key={signature}>
-                      <td>{signature}</td>
-                      <td>{blockTime ? new Date(blockTime * 1000).toDateString() : 'No date'}</td>
-                      <td>{formatSolOutput(postBalanceSol)}</td>
-                      <td><span className={delta.gt(0) ? 'positive-delta' : 'negative-delta'}>{deltaSign}{formatSolOutput(deltaSol)}</span></td>
-                      <td><span className={success ? 'success-status' : 'error-status'}>{success ? 'success' : 'error'}</span></td>
-                    </tr>
-                  )
-                })}
+                {accountTransactions.map((transactionInfo, index) => 
+                  <TransactionTableRow transaction={transactionInfo} rowIndex={index} key={`transaction-row-${index}`}/>
+                )}
                 </tbody>
               </table>
             </div>

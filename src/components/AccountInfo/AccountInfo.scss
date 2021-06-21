@@ -12,31 +12,31 @@
   .address-input {
     display: flex;
     align-items: center;
-    input, button {
-      padding: 12px 24px;
-      background-color: #42464c;
-      color: #eee;
-      border: 0;
-      border-radius: 4px;
-      &:focus {
-        outline: none;
-      }
+  }
+  input, button {
+    padding: 12px 24px;
+    background-color: #42464c;
+    color: #eee;
+    border: 0;
+    border-radius: 4px;
+    &:focus {
+      outline: none;
     }
-    input {
-      flex: 3;
-      margin-right: 35px;
-    }
-    button {
-      cursor: pointer;
-      flex: 1;
-      transition: background-color 0.3s;
+  }
+  input {
+    flex: 3;
+    margin-right: 35px;
+  }
+  button {
+    cursor: pointer;
+    flex: 1;
+    transition: background-color 0.3s;
 
-      &:hover {        
-        background-color: #33363a;
-      }
-      &:active {
-        background-color: #232629;
-      }
+    &:hover {        
+      background-color: #33363a;
+    }
+    &:active {
+      background-color: #232629;
     }
   }
   
@@ -45,7 +45,7 @@
     overflow-x: auto;
   }
   table {
-    margin-top: 30px;
+    margin: 30px 0;
     color: #eee;
     width: 100%; 
     border-collapse: collapse;
