@@ -1,0 +1,86 @@
+.account-info-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  overflow-x: auto;
+  .address-input {
+    display: flex;
+    align-items: center;
+    input, button {
+      padding: 12px 24px;
+      background-color: #42464c;
+      color: #eee;
+      border: 0;
+      border-radius: 4px;
+      &:focus {
+        outline: none;
+      }
+    }
+    input {
+      flex: 3;
+      margin-right: 35px;
+    }
+    button {
+      cursor: pointer;
+      flex: 1;
+      transition: background-color 0.3s;
+
+      &:hover {        
+        background-color: #33363a;
+      }
+      &:active {
+        background-color: #232629;
+      }
+    }
+  }
+  
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  table {
+    margin-top: 30px;
+    color: #eee;
+    width: 100%; 
+    border-collapse: collapse;
+    thead {
+      td {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    td {
+      text-align: left;
+      padding: 15px 25px 15px 0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  .positive-delta {
+    color: #25bf25;
+  }
+  .negative-delta {
+    color: #d03939;
+  }
+
+  .success-status, .error-status {
+    padding: 1px 3px;
+    border-radius: 6px; 
+    color: #fff;
+    display: flex;
+    line-height: 14px;
+  }
+  .success-status {
+    background-color: #1c7b1c;
+  }
+  .error-status {
+    background-color: #d03939;
+  }
+}
